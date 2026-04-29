@@ -1,0 +1,131 @@
+.particle-background {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+              linear-gradient(180deg, #0A0A0A 0%, #151515 100%);
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: float-particle var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+  opacity: 0.4;
+}
+
+.particle-dot {
+  background: radial-gradient(circle, #D4AF37 0%, transparent 70%);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.particle-heart {
+  background: transparent;
+  clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.82 0 3.53.88 4.5 2.2C13.09 3.88 14.68 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
+}
+
+.particle-house {
+  background: transparent;
+  clip-path: polygon(50% 0%, 100% 35%, 100% 100%, 0% 100%, 0% 35%);
+  background: rgba(212, 175, 55, 0.3);
+}
+
+.particle-sparkle {
+  background: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.floating-card {
+  position: absolute;
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: float-card var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+  transform: rotate(var(--rotation));
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.floating-card:hover {
+  transform: rotate(0deg) scale(1.05) !important;
+  z-index: 10;
+  box-shadow: 0 30px 60px rgba(212, 175, 55, 0.2);
+}
+
+.floating-card .card-image {
+  height: 60%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(16, 185, 129, 0.1));
+  position: relative;
+}
+
+.floating-card .card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.03) 10px,
+    rgba(255, 255, 255, 0.03) 20px
+  );
+}
+
+.floating-card .card-content {
+  padding: 12px;
+  background: rgba(15, 15, 15, 0.8);
+}
+
+.floating-card .card-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: #D4AF37;
+}
+
+.floating-card .card-details {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 4px;
+}
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translateY(-30px) rotate(90deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-50px) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-30px) rotate(270deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes float-card {
+  0%, 100% {
+    transform: rotate(var(--rotation)) translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(calc(var(--rotation) + 5deg)) translateY(-40px);
+    opacity: 0.9;
+  }
+}
