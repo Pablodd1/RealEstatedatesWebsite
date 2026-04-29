@@ -12,7 +12,7 @@ interface TextDecodeProps {
 export default function TextDecode({ text, className = '', delay = 0, speed = 30 }: TextDecodeProps) {
   const [displayText, setDisplayText] = useState('');
   const [started, setStarted] = useState(false);
-  const frameRef = useRef(0);
+  const frameRef = useRef<ReturnType<typeof setTimeout> | number>(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setStarted(true), delay);

@@ -3,7 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionHeader from '@/components/SectionHeader'
-import { Download, Smartphone, Star } from 'lucide-react'
+import { Smartphone, Star } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
