@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --primary: 152 33% 70%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .text-text-primary {
+    @apply text-gray-900;
+  }
+
+  .text-text-secondary {
+    @apply text-gray-600;
+  }
+
+  .bg-warm-white {
+    @apply bg-gray-50;
+  }
+
+  .bg-charcoal {
+    @apply bg-gray-900;
+  }
+
+  .bg-beige {
+    @apply bg-amber-50;
+  }
+
+  .bg-beige-dark {
+    @apply bg-amber-100;
+  }
+
+  .text-sage {
+    @apply text-emerald-600;
+  }
+
+  .text-sage-light {
+    @apply text-emerald-400;
+  }
+
+  .text-sage-dark {
+    @apply text-emerald-700;
+  }
+
+  .bg-sage {
+    @apply bg-emerald-600;
+  }
+
+  .bg-sage-dark {
+    @apply bg-emerald-700;
+  }
+
+  .text-coral {
+    @apply text-orange-500;
+  }
+
+  .bg-coral {
+    @apply bg-orange-500;
+  }
+
+  .shadow-glow-sage {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  }
+}
